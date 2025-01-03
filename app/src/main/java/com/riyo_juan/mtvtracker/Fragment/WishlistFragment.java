@@ -1,4 +1,4 @@
-package com.riyo_juan.mtvtracker;
+package com.riyo_juan.mtvtracker.Fragment;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.riyo_juan.mtvtracker.R;
 
 /**
  * A simple {@link Fragment} subclass.

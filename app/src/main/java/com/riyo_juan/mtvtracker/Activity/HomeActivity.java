@@ -1,12 +1,8 @@
-package com.riyo_juan.mtvtracker;
+package com.riyo_juan.mtvtracker.Activity;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -18,17 +14,15 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.riyo_juan.mtvtracker.Fragment.AccountFragment;
+import com.riyo_juan.mtvtracker.Fragment.HistoryFragment;
+import com.riyo_juan.mtvtracker.Fragment.HomeFragment;
+import com.riyo_juan.mtvtracker.R;
+import com.riyo_juan.mtvtracker.Fragment.WishlistFragment;
 
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
-
-//    private GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,8 +66,6 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         else if(id == R.id.account_settings) {
             SharedPreferences prefs = getSharedPreferences("userdata", MODE_PRIVATE);
             String email = prefs.getString("email", "");
-//            Intent accountIntent  = getIntent();
-//            String email = accountIntent.getStringExtra("email");
 
             AccountFragment accountFragment = AccountFragment.newInstance(email);
             loadFragment(accountFragment);
